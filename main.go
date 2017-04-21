@@ -8,7 +8,7 @@ import (
 )
 
 var (
-	color = "red"
+	color = "green"
 )
 
 func main() {
@@ -17,7 +17,6 @@ func main() {
 		log.Fatal("os.Hostname(): %v", err)
 	}
 
-	os.Exit(1)
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		fmt.Fprintf(w, "<body>\n")
 		fmt.Fprintf(w, "<h1 style='color: %s;'>", color)
