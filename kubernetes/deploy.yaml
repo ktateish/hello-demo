@@ -1,0 +1,19 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: hello-demo
+  labels:
+    name: hello-demo
+spec:
+  replicas: 3
+  template:
+    metadata:
+      name: hello-demo
+      labels:
+        name: hello-demo
+    spec:
+      containers:
+        - image: ktateish/hello-demo:blue
+          name: hello-demo
+          ports:
+            - containerPort: 8080
